@@ -49,6 +49,28 @@ sudo pacman -S gtk-engine-murrine
 sudo apt install gtk2-engines-murrine
 ```
 
+## 📦 tokyo-glass (one-shot installer)
+A bundled, offline-capable installer ships alongside this repo at `tokyo-glass.sh`.
+It compiles the Tokyonight SCSS in this repo into a full GNOME theme, installs
+the Slot Dark Icons + Slot Dark Plasma system icons, the Annotation Mono Bold
+Nerd Font, and pastel border CSS. Everything it needs is under this repo —
+no network access required at install time.
+
+```sh
+cd Tokyonight-GTK-Theme   # the repo root
+./tokyo-glass.sh --dry-run   # preview
+./tokyo-glass.sh --force     # install
+```
+
+Assets shipped in `assets/`:
+- `Slot-Dark-Icons.tar.xz` — complete icon theme (all 14 categories)
+- `Slot-Dark-Plasma.tar.gz` — system UI / top-bar icons
+- `AnnotationMono.zip` — Annotation Mono Bold Nerd Font
+
+For GTK3 apply from Gnome Tweaks / Refine / Tuner.
+For GTK4 move/copy the `assets`, `gtk.css` and `gtk-dark.css` files to
+`~/.config/gtk-4.0` (the installer does this for you).
+
 ## 📁 Manual Installation
 
 - Download the [themes](https://www.pling.com/u/fkorpsvart) packs and extract them
@@ -58,6 +80,10 @@ sudo apt install gtk2-engines-murrine
     copy only the `assets`, `gtk.css` and `gtk-dark.css` files or create a symlinks.
 
 ## 🔨 Applying the Theme
+The `tokyo-glass.sh` installer applies the theme (compiles SCSS, writes
+`index.theme`, sets up `~/.config/gtk-4.0` and `~/.config/gtk-3.0`).
+After installing, for **GTK3**, apply themes from **Gnome Tweaks**, **Refine**
+or **Tuner** (if you skipped the installer).
 
 - For **GTK3**, apply themes from **Gnome Tweaks**, **Refine** or **Tuner**
 - For GTK4 applications it is only necessary to have moved the `assets`, `gtk.css` and `gtk-dark.css` files to the `~/.config/gtk-4.0` path,
